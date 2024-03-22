@@ -20,20 +20,21 @@ export class AddSurveyComponent {
 
   // card 초기화
   cards: any[] = [{
-    item_title: '', item_options: [{ option: '' }], required: false
+    item_title: '', item_options: [{ index: 0, option: '' }], required: false
   }];
 
   // 카드 추가 
   addCard() {
     this.cards.push({
-      item_title: '', item_options: [{ option: '' }], required: false
+      item_title: '', item_options: [{ index: 0, option: '' }], required: false
     })
   }
 
   // 항목 추가
   addItem(idx: number) {
-
-    this.cards[idx].item_options.push({ option: `옵션${this.cards[idx].item_options.length + 1}` })
+    let next_index = 0
+    this.cards[idx].item_options.map((item: any) => { next_index > item ? next_index = item : '' })
+    this.cards[idx].item_options.push({ index: next_index, option: `옵션${next_index + 1}` })
   }
 
 
