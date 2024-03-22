@@ -12,7 +12,15 @@
 
         <section cdkDropList class="boundary">
             @for(card of cards; track card; let idx = $index) {
-            <app-card [id]="idx" cdkDrag cdkDragBoundary=".boundary">
+            <app-card [id]="idx" cdkDrag cdkDragBoundary=".boundary" class="element_class">
+
+                <!-- <div *cdkDragPreview>
+
+                </div> -->
+
+
+
+                <!-- 본문 -->
                 <div class='card_drag_handle'><mat-icon cdkDragHandle>more_horiz</mat-icon></div>
 
                 <div class="card_container">
