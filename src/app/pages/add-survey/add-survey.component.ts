@@ -39,7 +39,7 @@ export class AddSurveyComponent {
   addItem(idx: number) {
     let next_index = 0
     this.cards[idx].item_options.map((item: any) => { next_index > item ? next_index = item : '' })
-    this.cards[idx].item_options.push({ index: next_index + 1, option: `옵션${next_index + 1}` })
+    this.cards[idx].item_options.push({ index: next_index + 1, option: `option${next_index + 1}` })
   }
 
 

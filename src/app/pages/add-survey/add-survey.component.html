@@ -17,7 +17,7 @@
                 <!-- 제목 항목 영역 -->
                 <section class="card_title_section">
                     <!-- 설문 항목 제목 -->
-                    <input class="item_title_input" placeholder="item title" [(ngModel)]="card.item_title"
+                    <input class="item_title_input" placeholder="Please enter a question" [(ngModel)]="card.item_title"
                         [name]="'item_title'+idx" />
                     <!-- 응답 받을 항목 수 입력 -->
                     <input class="item_number_input" placeholder="num" type="number" min="1"
@@ -38,7 +38,7 @@
 
                     <!-- 항목 추가 버튼 -->
                     <div>
-                        <button class="add_item_button" (click)="addItem(idx)">add item...</button>
+                        <button class="add_item_button" (click)="addItem(idx)">add items...</button>
                     </div>
 
                 </section>
@@ -59,7 +59,7 @@
 
     <section class=" button_section">
         <button mat-flat-button (click)="addCard();$event.preventDefault()">
-            add survey
+            add question
         </button>
         <button class="add_button" mat-flat-button type="submit">
             submit
