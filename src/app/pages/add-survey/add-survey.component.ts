@@ -42,7 +42,7 @@ export class AddSurveyComponent {
   addItem(idx: number) {
     let next_index = 0
     this.cards[idx].item_options.map((item: any) => { next_index < item.index ? next_index = item.index : '' })
-    this.cards[idx].item_options.push({ index: next_index + 1, option: `option${next_index + 1}` })
+    this.cards[idx].item_options.push({ index: next_index + 1, option: `option ${next_index + 1}` })
   }
 
 
@@ -56,8 +56,14 @@ export class AddSurveyComponent {
   cardDrop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.cards, event.previousIndex, event.currentIndex);
   }
+
+
+  itemDrop(event: CdkDragDrop<string[]>, idx: number) {
+    moveItemInArray(this.cards[idx].item_options, event.previousIndex, event.currentIndex);
+  }
+
   // 제출
   submit() {
-    console.log(this.cards)
+    console.log(this.title, this.description, this.cards)
   }
 }

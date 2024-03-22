@@ -30,9 +30,9 @@
                     </section>
 
                     <!-- 항목 내용 영역 -->
-                    <section class="card_items_section">
+                    <section cdkDropList class="card_items_section" (cdkDropListDropped)="itemDrop($event, idx)">
                         @for(item of card.item_options; track item; let item_idx = $index) {
-                        <div class="item">
+                        <div class="item" cdkDrag>
                             <div class="item_input_container">
                                 <mat-icon>drag_indicator</mat-icon>
                                 <input class="item_input" [(ngModel)]="item.option"

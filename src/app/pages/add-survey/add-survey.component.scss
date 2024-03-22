@@ -172,41 +172,7 @@ $gray_color: rgb(201, 201, 201);
             flex-direction: column;
             gap: 1rem;
 
-            .item {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
 
-
-                .item_input_container {
-                    display: flex;
-                    gap: 0.2rem;
-                    align-items: center;
-                    flex: 1;
-
-                    .item_input {
-                        width: 100%;
-                        padding: 0.5rem;
-                        border-radius: 0.3rem;
-                        border: 1px solid white;
-                        transition: all 0.3s;
-                        font-size: 11pt !important;
-
-                        &:focus {
-                            border: 1px solid $main_color;
-                        }
-
-                        &:not(:focus) {
-                            &:hover {
-                                border: 1px solid $gray_color;
-                            }
-                        }
-
-
-                    }
-                }
-
-            }
 
 
             .add_item_button {
@@ -225,6 +191,47 @@ $gray_color: rgb(201, 201, 201);
             gap: 1rem;
         }
     }
+}
+
+
+
+.cdk-drag-preview,
+.item {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+    .item_input_container {
+        display: flex;
+        gap: 0.2rem;
+        align-items: center;
+        flex: 1;
+
+        .item_input {
+            width: 100%;
+            padding: 0.5rem;
+            border-radius: 0.3rem;
+            border: 1px solid white;
+            transition: all 0.3s;
+            font-size: 11pt !important;
+
+            &:focus {
+                border: 1px solid $main_color;
+            }
+
+            &:not(:focus) {
+                &:hover {
+                    border: 1px solid $gray_color;
+                }
+            }
+
+
+        }
+    }
+
+
 }
 
 
