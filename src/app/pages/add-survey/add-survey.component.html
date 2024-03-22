@@ -1,4 +1,4 @@
-<form class="add_container">
+<form class="add_container" (submit)="submit()">
     <section class="input_section">
         <app-card>
             <div class='line'></div>
@@ -26,7 +26,7 @@
                 <section class="card_items_section">
                     @for(item of card.item_options; track item; let item_idx = $index) {
                     <div class="item">
-                        <input class="item_input" [ngModel]="item.option" name="item" />
+                        <input class="item_input" [(ngModel)]="item.option" [name]="'option'+item_idx" />
                         <button mat-icon-button (click)="removeItem(idx, item_idx)">
                             <mat-icon>close</mat-icon>
                         </button>
@@ -40,10 +40,11 @@
                     </div>
 
                 </section>
-
+                <div class="hoz_line"></div>
                 <!-- 버튼 영역 -->
                 <section class="card_button_section">
                     <button mat-icon-button><mat-icon>delete</mat-icon></button>
+                    <div class="b_line"></div>
                     <mat-slide-toggle>required</mat-slide-toggle>
                 </section>
             </div>

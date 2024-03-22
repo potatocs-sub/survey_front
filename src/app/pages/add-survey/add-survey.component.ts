@@ -41,4 +41,10 @@ export class AddSurveyComponent {
   removeItem(idx: number, item_idx: number) {
     this.cards[idx].item_options.splice(item_idx, 1)
   }
+
+
+
+  submit() {
+    console.log(this.cards)
+  }
 }
