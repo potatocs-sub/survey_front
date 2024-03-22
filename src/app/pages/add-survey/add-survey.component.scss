@@ -21,6 +21,24 @@ $gray_color: rgb(201, 201, 201);
         flex-direction: column;
         gap: 1.5rem;
 
+        .boundary {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+
+
+            .card_drag_handle {
+                display: flex;
+                margin: 0 auto;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+            }
+        }
 
         .line {
             background-color: $main_color;

@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { CardComponent } from '../../components/public/card/card.component';
 import { MaterialsModule } from '../../materials/materials.module';
 import { CommonModule } from '@angular/common';
+import { CdkDrag, CdkDropList } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-add-survey',
   standalone: true,
-  imports: [CardComponent, MaterialsModule, CommonModule],
+  imports: [CardComponent, MaterialsModule, CommonModule, CdkDropList, CdkDrag],
   templateUrl: './add-survey.component.html',
   styleUrl: './add-survey.component.scss'
 })

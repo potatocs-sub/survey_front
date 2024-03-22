@@ -41,6 +41,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSliderModule } from '@angular/material/slider';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 @NgModule({
   exports: [
     MatNativeDateModule,
@@ -81,7 +82,8 @@ import { MatSliderModule } from '@angular/material/slider';
     MatRadioModule,
     MatProgressBarModule,
     MatSlideToggleModule,
-    MatSliderModule
+    MatSliderModule,
+    DragDropModule
   ],
 })
 export class MaterialsModule { }
