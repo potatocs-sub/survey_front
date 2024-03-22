@@ -16,25 +16,35 @@
                 <!-- 제목 항목 영역 -->
                 <section class="card_title_section">
                     <!-- 설문 항목 제목 -->
-                    <input class="" placeholder="item title" />
+                    <input class="item_title_input" placeholder="item title" />
                     <!-- 응답 받을 항목 수 입력 -->
-                    <input placeholder="number" type="number" min="1" [max]="card.item_options.length" />
+                    <input class="item_number_input" placeholder="number" type="number" min="1"
+                        [max]="card.item_options.length" />
                 </section>
 
                 <!-- 항목 내용 영역 -->
                 <section class="card_items_section">
-                    @for(item of card.item_options; track item) {
-                    <div>희희</div>
+                    @for(item of card.item_options; track item; let item_idx = $index) {
+                    <div class="item">
+                        <input class="item_input" [ngModel]="item.option" name="item" />
+                        <button mat-icon-button (click)="removeItem(idx, item_idx)">
+                            <mat-icon>close</mat-icon>
+                        </button>
+
+                    </div>
                     }
-                    <section>
-                        <button (click)="addItem(idx)">항목 추가</button>
-                    </section>
+
+                    <!-- 항목 추가 버튼 -->
+                    <div>
+                        <button class="add_item_button" (click)="addItem(idx)">add item...</button>
+                    </div>
+
                 </section>
 
                 <!-- 버튼 영역 -->
                 <section class="card_button_section">
-                    <button mat-flat-button color="">삭제</button>
-                    <button mat-flat-button color="primary">필수</button>
+                    <button mat-icon-button><mat-icon>delete</mat-icon></button>
+                    <mat-slide-toggle>required</mat-slide-toggle>
                 </section>
             </div>
 
