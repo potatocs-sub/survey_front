@@ -59,10 +59,13 @@
 
     <section class=" button_section">
         <button mat-flat-button (click)="addCard();$event.preventDefault()">
-            add question
+            <mat-icon
+                style="color: black; font-size: 24px; width: 24px; height: 24px; margin-right: 4px;">add</mat-icon>add
+            question
         </button>
-        <button class="add_button" mat-flat-button type="submit">
-            submit
+
+        <button matRipple class="add_button" mat-flat-button type="submit">
+            <mat-icon style="color: white;">send</mat-icon>submit
         </button>
     </section>
 </form>
