@@ -12,7 +12,7 @@
 
         <section cdkDropList class="boundary">
             @for(card of cards; track card; let idx = $index) {
-            <app-card [id]="idx" cdkDrag cdkDragBoundary=".boundary" class="element_class">
+            <div [id]="idx" cdkDrag cdkDragBoundary=".boundary" class="element_class">
 
                 <!-- <div *cdkDragPreview>
 
@@ -62,7 +62,7 @@
                     </section>
                 </div>
 
-            </app-card>
+            </div>
             }
         </section>
 

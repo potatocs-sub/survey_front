@@ -103,8 +103,20 @@ $gray_color: rgb(201, 201, 201);
 }
 
 
+.element_class {
+    background-color: white;
+}
+
 .cdk-drag-preview,
 .element_class {
+
+    padding: 1.5rem;
+    border-radius: 0.3rem;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+
+
     font-size: 11pt !important;
 
     .card_drag_handle {
@@ -205,4 +217,10 @@ $gray_color: rgb(201, 201, 201);
             gap: 1rem;
         }
     }
+}
+
+
+.cdk-drag-preview {
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12)
 }
