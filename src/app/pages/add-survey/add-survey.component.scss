@@ -178,26 +178,34 @@ $gray_color: rgb(201, 201, 201);
                 align-items: center;
 
 
-                .item_input {
+                .item_input_container {
+                    display: flex;
+                    gap: 0.2rem;
+                    align-items: center;
                     flex: 1;
-                    padding: 0.5rem;
-                    border-radius: 0.3rem;
-                    border: 1px solid white;
-                    transition: all 0.3s;
-                    font-size: 11pt !important;
 
-                    &:focus {
-                        border: 1px solid $main_color;
-                    }
+                    .item_input {
+                        width: 100%;
+                        padding: 0.5rem;
+                        border-radius: 0.3rem;
+                        border: 1px solid white;
+                        transition: all 0.3s;
+                        font-size: 11pt !important;
 
-                    &:not(:focus) {
-                        &:hover {
-                            border: 1px solid $gray_color;
+                        &:focus {
+                            border: 1px solid $main_color;
                         }
+
+                        &:not(:focus) {
+                            &:hover {
+                                border: 1px solid $gray_color;
+                            }
+                        }
+
+
                     }
-
-
                 }
+
             }
 
 

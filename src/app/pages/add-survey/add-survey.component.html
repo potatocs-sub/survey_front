@@ -4,21 +4,15 @@
             <div class='line'></div>
             <section class="input_title_section">
                 <input class="title" placeholder="Title of survey" [(ngModel)]="title" name="title" />
-                <input class="description" placeholder="Description of survey content" [(ngModel)]="description"
+                <input class="description" placeholder="Description of survey contents" [(ngModel)]="description"
                     name="description" />
             </section>
 
         </app-card>
 
-        <section cdkDropList class="boundary">
+        <section cdkDropList class="boundary" (cdkDropListDropped)="cardDrop($event)">
             @for(card of cards; track card; let idx = $index) {
-            <div [id]="idx" cdkDrag cdkDragBoundary=".boundary" class="element_class">
-
-                <!-- <div *cdkDragPreview>
-
-                </div> -->
-
-
+            <div [id]="idx" cdkDrag class="element_class">
 
                 <!-- 본문 -->
                 <div class='card_drag_handle'><mat-icon cdkDragHandle>more_horiz</mat-icon></div>
@@ -28,18 +22,23 @@
                     <section class="card_title_section">
                         <!-- 설문 항목 제목 -->
                         <input class="item_title_input" placeholder="Please enter a question"
-                            [(ngModel)]="card.item_title" [name]="'item_title'+idx" />
+                            [(ngModel)]="card.item_title" [ngModelOptions]="{standalone: true}" />
                         <!-- 응답 받을 항목 수 입력 -->
                         <input class="item_number_input" placeholder="num" type="number" min="1"
                             [max]="card.item_options.length" [(ngModel)]="card.num_of_answer"
-                            [name]="'num_answer'+idx" />
+                            [ngModelOptions]="{standalone: true}" />
                     </section>
 
                     <!-- 항목 내용 영역 -->
                     <section class="card_items_section">
                         @for(item of card.item_options; track item; let item_idx = $index) {
                         <div class="item">
-                            <input class="item_input" [(ngModel)]="item.option" [name]="'option'+item_idx" />
+                            <div class="item_input_container">
+                                <mat-icon>drag_indicator</mat-icon>
+                                <input class="item_input" [(ngModel)]="item.option"
+                                    [ngModelOptions]="{standalone: true}" />
+                            </div>
+
                             <button mat-icon-button (click)="removeItem(idx, item_idx)">
                                 <mat-icon>close</mat-icon>
                             </button>

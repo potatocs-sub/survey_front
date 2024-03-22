@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CardComponent } from '../../components/public/card/card.component';
 import { MaterialsModule } from '../../materials/materials.module';
 import { CommonModule } from '@angular/common';
-import { CdkDrag, CdkDropList } from '@angular/cdk/drag-drop';
+import { CdkDrag, CdkDragDrop, CdkDropList, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-add-survey',
@@ -21,13 +21,15 @@ export class AddSurveyComponent {
 
   // card 초기화
   cards: any[] = [{
-    item_title: '', num_of_answer: 1, item_options: [{ index: 1, option: 'option 1' }], required: false
+    index: 1, item_title: '', num_of_answer: 1, item_options: [{ index: 1, option: 'option 1' }], required: false
   }];
 
   // 카드 추가 
   addCard() {
+    let next_index = 0;
+    this.cards.map((card) => { next_index < card.index ? next_index = card.index : '' })
     this.cards.push({
-      item_title: '', num_of_answer: 1, item_options: [{ index: 1, option: 'option 1' }], required: false
+      index: next_index + 1, item_title: '', num_of_answer: 1, item_options: [{ index: 1, option: 'option 1' }], required: false
     })
   }
 
@@ -50,6 +52,10 @@ export class AddSurveyComponent {
   }
 
 
+  // card drop
+  cardDrop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.cards, event.previousIndex, event.currentIndex);
+  }
   // 제출
   submit() {
     console.log(this.cards)
