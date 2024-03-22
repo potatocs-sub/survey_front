@@ -1,1 +1,54 @@
-<p>add-survey works!</p>
+<form class="add_container">
+    <section class="input_section">
+        <app-card>
+            <div class='line'></div>
+            <section class="input_title_section">
+                <input placeholder="survey title" />
+                <input placeholder="explain survey" />
+            </section>
+
+        </app-card>
+
+
+        @for(card of cards; track card; let idx = $index) {
+        <app-card [id]="idx">
+            <div class="">
+                <!-- 제목 항목 영역 -->
+                <section>
+                    <!-- 설문 항목 제목 -->
+                    <input class="" />
+                    <!-- 응답 받을 항목 수 입력 -->
+                    <input type="number" />
+                </section>
+
+                <!-- 항목 내용 영역 -->
+                <section>
+                    @for(item of card.item_options; track item) {
+                    <div>희희</div>
+                    }
+                    <section>
+                        <button (click)="addItem(idx)">항목 추가</button>
+                    </section>
+                </section>
+
+                <!-- 버튼 영역 -->
+                <section>
+                    <button>삭제</button>
+                    <button>필수</button>
+                </section>
+            </div>
+        </app-card>
+        }
+
+    </section>
+
+
+    <section class="button_section">
+        <button mat-flat-button (click)="addCard()">
+            질문 추가
+        </button>
+        <button class="add_button" mat-flat-button type="submit">
+            등록
+        </button>
+    </section>
+</form>

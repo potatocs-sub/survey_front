@@ -1,0 +1,36 @@
+@import '../../setting.scss';
+
+.add_container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 0.5rem;
+
+    .input_section {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+
+        .line {
+            background-color: $main_color;
+            height: 0.6rem;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    .button_section {
+        display: flex;
+        gap: 0.5rem;
+        justify-content: end;
+
+        .add_button {
+            background-color: $main_color;
+            color: white;
+        }
+    }
+}
