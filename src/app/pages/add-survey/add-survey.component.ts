@@ -15,19 +15,24 @@ export class AddSurveyComponent {
   title: string = '';
 
   // 설명
-  explain: string = '';
+  description: string = '';
 
 
   // card 초기화
   cards: any[] = [{
-    item_title: '', item_options: [{ index: 0, option: '' }], required: false
+    item_title: '', num_of_answer: 1, item_options: [{ index: 0, option: '' }], required: false
   }];
 
   // 카드 추가 
   addCard() {
     this.cards.push({
-      item_title: '', item_options: [{ index: 0, option: '' }], required: false
+      item_title: '', num_of_answer: 1, item_options: [{ index: 0, option: '' }], required: false
     })
+  }
+
+  // 카드 삭제
+  removeCard(idx: number) {
+    this.cards.splice(idx, 1);
   }
 
   // 항목 추가
@@ -44,7 +49,7 @@ export class AddSurveyComponent {
   }
 
 
-
+  // 제출
   submit() {
     console.log(this.cards)
   }

@@ -3,8 +3,9 @@
         <app-card>
             <div class='line'></div>
             <section class="input_title_section">
-                <input class="title" placeholder="survey title" />
-                <input class="explain" placeholder="explain survey" />
+                <input class="title" placeholder="Title of survey" [(ngModel)]="title" name="title" />
+                <input class="description" placeholder="Description of survey content" [(ngModel)]="description"
+                    name="description" />
             </section>
 
         </app-card>
@@ -16,10 +17,11 @@
                 <!-- 제목 항목 영역 -->
                 <section class="card_title_section">
                     <!-- 설문 항목 제목 -->
-                    <input class="item_title_input" placeholder="item title" />
+                    <input class="item_title_input" placeholder="item title" [(ngModel)]="card.item_title"
+                        [name]="'item_title'+idx" />
                     <!-- 응답 받을 항목 수 입력 -->
-                    <input class="item_number_input" placeholder="number" type="number" min="1"
-                        [max]="card.item_options.length" />
+                    <input class="item_number_input" placeholder="num" type="number" min="1"
+                        [max]="card.item_options.length" [(ngModel)]="card.num_of_answer" [name]="'num_answer'+idx" />
                 </section>
 
                 <!-- 항목 내용 영역 -->
@@ -43,9 +45,9 @@
                 <div class="hoz_line"></div>
                 <!-- 버튼 영역 -->
                 <section class="card_button_section">
-                    <button mat-icon-button><mat-icon>delete</mat-icon></button>
+                    <button mat-icon-button (click)="removeCard(idx)"><mat-icon>delete</mat-icon></button>
                     <div class="b_line"></div>
-                    <mat-slide-toggle>required</mat-slide-toggle>
+                    <mat-slide-toggle [(ngModel)]="card.required" [name]="'req'+idx">required</mat-slide-toggle>
                 </section>
             </div>
 
@@ -55,12 +57,12 @@
     </section>
 
 
-    <section class="button_section">
-        <button mat-flat-button (click)="addCard()">
-            질문 추가
+    <section class=" button_section">
+        <button mat-flat-button (click)="addCard();$event.preventDefault()">
+            add survey
         </button>
         <button class="add_button" mat-flat-button type="submit">
-            등록
+            submit
         </button>
     </section>
 </form>
