@@ -8,12 +8,18 @@ $gray_color: rgb(201, 201, 201);
     flex-direction: column;
     height: 100%;
     gap: 2rem;
+    padding-top: 0.5rem;
+
+    input {
+        font-size: 11pt;
+    }
+
 
     .input_section {
         flex: 1;
         display: flex;
         flex-direction: column;
-        gap: 2rem;
+        gap: 1.5rem;
 
 
         .line {
@@ -44,7 +50,7 @@ $gray_color: rgb(201, 201, 201);
             }
 
             .title {
-                font-size: 2rem;
+                font-size: 24pt;
             }
         }
 
