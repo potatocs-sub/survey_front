@@ -36,6 +36,7 @@ $gray_color: rgb(201, 201, 201);
             input {
                 border-bottom: 1px solid $gray_color;
                 padding-bottom: 0.7rem;
+                transition: all 0.3s;
 
                 &:focus {
                     border-bottom: 1px solid $main_color;
@@ -61,12 +62,22 @@ $gray_color: rgb(201, 201, 201);
                 .item_title_input {
                     flex: 1;
                     border-bottom: 1px solid $gray_color;
+                    transition: all 0.3s;
+
+                    &:focus {
+                        border-bottom: 1px solid $main_color;
+                    }
                 }
 
                 .item_number_input {
                     border: 1px solid $gray_color;
                     padding: 0.5rem;
                     border-radius: 0.3rem;
+                    transition: all 0.3s;
+
+                    &:focus {
+                        border: 1px solid $main_color;
+                    }
                 }
             }
 
@@ -85,14 +96,20 @@ $gray_color: rgb(201, 201, 201);
                         flex: 1;
                         padding: 0.5rem;
                         border-radius: 0.3rem;
+                        border: 1px solid white;
+                        transition: all 0.3s;
 
                         &:focus {
-                            border: 1px solid $gray_color;
+                            border: 1px solid $main_color;
                         }
 
-                        &:hover {
-                            border: 1px solid $gray_color;
+                        &:not(:focus) {
+                            &:hover {
+                                border: 1px solid $gray_color;
+                            }
                         }
+
+
                     }
                 }
 

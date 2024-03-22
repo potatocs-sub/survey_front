@@ -20,13 +20,13 @@ export class AddSurveyComponent {
 
   // card 초기화
   cards: any[] = [{
-    item_title: '', num_of_answer: 1, item_options: [{ index: 0, option: '' }], required: false
+    item_title: '', num_of_answer: 1, item_options: [{ index: 1, option: 'option 1' }], required: false
   }];
 
   // 카드 추가 
   addCard() {
     this.cards.push({
-      item_title: '', num_of_answer: 1, item_options: [{ index: 0, option: '' }], required: false
+      item_title: '', num_of_answer: 1, item_options: [{ index: 1, option: 'option 1' }], required: false
     })
   }
 
@@ -39,7 +39,7 @@ export class AddSurveyComponent {
   addItem(idx: number) {
     let next_index = 0
     this.cards[idx].item_options.map((item: any) => { next_index > item ? next_index = item : '' })
-    this.cards[idx].item_options.push({ index: next_index, option: `옵션${next_index + 1}` })
+    this.cards[idx].item_options.push({ index: next_index + 1, option: `옵션${next_index + 1}` })
   }
 
 
