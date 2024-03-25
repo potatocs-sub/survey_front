@@ -1,6 +1,6 @@
 <div class="home_container">
     @for(survey of surveys; track survey){
-    <app-card [hover]="true">
+    <app-card [hover]="true" (click)="goToSurvey(survey._id)">
         <div class="card">
             <h3 class="title">{{survey.title}}</h3>
             <p class="description">{{survey.description}}</p>
