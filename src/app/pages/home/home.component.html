@@ -1,8 +1,11 @@
 <div class="home_container">
     @for(survey of surveys; track survey){
     <app-card [hover]="true">
-        <h3 class="title_section">{{survey.title}}</h3>
-        <p class="description_section">{{survey.description}}</p>
+        <div class="card">
+            <h3 class="title">{{survey.title}}</h3>
+            <p class="description">{{survey.description}}</p>
+        </div>
+
     </app-card>
     }
 </div>
