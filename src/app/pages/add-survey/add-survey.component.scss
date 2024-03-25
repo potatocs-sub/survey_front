@@ -117,7 +117,9 @@ $gray_color: rgb(201, 201, 201);
 .cdk-drag-preview,
 .element_class {
 
-
+    input {
+        background-color: transparent;
+    }
 
     .card_drag_handle {
         display: flex;
@@ -214,7 +216,7 @@ $gray_color: rgb(201, 201, 201);
             width: 100%;
             padding: 0.5rem;
             border-radius: 0.3rem;
-            border: 1px solid white;
+            border: 1px solid transparent;
             transition: all 0.3s;
             font-size: 11pt !important;
 
