@@ -42,4 +42,11 @@ export class SurveyComponent {
 
     console.log(this.result)
   }
+
+
+
+  back() {
+    this.router.navigate(['/'])
+  }
+
 }

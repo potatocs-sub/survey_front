@@ -29,7 +29,7 @@
         </section>
         <section class="button_section">
             <button mat-flat-button>submit</button>
-            <button mat-flat-button color="warn">cancel</button>
+            <button (click)="back(); $event.preventDefault()" mat-flat-button color="warn">cancel</button>
         </section>
     </form>
 </div>
