@@ -3,6 +3,7 @@ import { CardComponent } from '../../components/public/card/card.component';
 import { MaterialsModule } from '../../materials/materials.module';
 import { CommonModule } from '@angular/common';
 import { CdkDrag, CdkDragDrop, CdkDropList, moveItemInArray } from '@angular/cdk/drag-drop';
+import { SurveyService } from '../../services/survey/survey.service';
 
 @Component({
   selector: 'app-add-survey',
@@ -23,6 +24,12 @@ export class AddSurveyComponent {
   cards: any[] = [{
     index: 1, item_title: '', num_of_answer: 1, item_options: [{ index: 1, option: 'option 1' }], required: false
   }];
+
+
+
+  constructor(private surveyService: SurveyService) {
+
+  }
 
   // 카드 추가 
   addCard() {
@@ -65,5 +72,8 @@ export class AddSurveyComponent {
   // 제출
   submit() {
     console.log(this.title, this.description, this.cards)
+    this.surveyService.addSurvey({ title: this.title, description: this.description, cards: this.cards }).subscribe((res) => {
+
+    })
   }
 }
