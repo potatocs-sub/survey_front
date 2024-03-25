@@ -1,1 +1,8 @@
-<app-card>홈</app-card>
+<div class="home_container">
+    @for(survey of surveys; track survey){
+    <app-card [hover]="true">
+        <h3 class="title_section">{{survey.title}}</h3>
+        <p class="description_section">{{survey.description}}</p>
+    </app-card>
+    }
+</div>

@@ -14,8 +14,18 @@ export class SurveyService {
   addSurvey(survey: any) {
     return this.http.post(this.baseUrl + `/survey/add`, survey).pipe(
       tap((res: any) => {
-        console.log(res);
+        // console.log(res);
       })
     )
+  }
+
+  // get survey
+  getSurveyList() {
+    return this.http.get(this.baseUrl + '/survey');
+  }
+
+
+  getSurvey(_id: string) {
+    return this.http.get(this.baseUrl + `/${_id}`);
   }
 }
