@@ -48,7 +48,8 @@
 
                         <!-- 항목 추가 버튼 -->
                         <div>
-                            <button class="add_item_button" (click)="addItem(idx)">add items...</button>
+                            <button class="add_item_button" (click)="addItem(idx); $event.preventDefault()">add
+                                items...</button>
                         </div>
 
                     </section>
