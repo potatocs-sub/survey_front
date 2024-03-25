@@ -57,7 +57,8 @@
                     <section class="card_button_section">
                         <button mat-icon-button (click)="removeCard(idx)"><mat-icon>delete</mat-icon></button>
                         <div class="b_line"></div>
-                        <mat-slide-toggle [(ngModel)]="card.required" [name]="'req'+idx">required</mat-slide-toggle>
+                        <mat-slide-toggle color="primary" [(ngModel)]="card.required"
+                            [name]="'req'+idx">required</mat-slide-toggle>
                     </section>
                 </div>
 
