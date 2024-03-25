@@ -26,6 +26,6 @@ export class SurveyService {
 
 
   getSurvey(_id: string) {
-    return this.http.get(this.baseUrl + `/${_id}`);
+    return this.http.get(this.baseUrl + `/survey/${_id}`);
   }
 }

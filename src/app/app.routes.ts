@@ -1,9 +1,10 @@
 import { Routes } from '@angular/router';
 import { AddSurveyComponent } from './pages/add-survey/add-survey.component';
 import { EditServeyComponent } from './pages/edit-servey/edit-servey.component';
-import { ServeyComponent } from './pages/survey/survey.component';
+import { SurveyComponent } from './pages/survey/survey.component';
 import { NotFoundComponent } from './components/public/not-found/not-found.component';
 import { HomeComponent } from './pages/home/home.component';
+import { ResultComponent } from './pages/result/result.component';
 
 export const routes: Routes = [
     {
@@ -14,7 +15,7 @@ export const routes: Routes = [
     {
         path: 'survey/:_id',
         title: 'servey',
-        component: ServeyComponent
+        component: SurveyComponent
     },
     {
         path: 'add_survey',
@@ -23,9 +24,15 @@ export const routes: Routes = [
     },
     {
         path: 'edit_survey',
-        title: 'edit servey',
+        title: 'edit survey',
         component: EditServeyComponent
-    }, {
+    },
+    {
+        path: 'result',
+        title: 'survey result',
+        component: ResultComponent
+    },
+    {
         path: '*',
         component: NotFoundComponent
     }
