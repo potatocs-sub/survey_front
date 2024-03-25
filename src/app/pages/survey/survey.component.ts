@@ -4,8 +4,8 @@ import { Component } from '@angular/core';
   selector: 'app-servey',
   standalone: true,
   imports: [],
-  templateUrl: './servey.component.html',
-  styleUrl: './servey.component.scss'
+  templateUrl: './survey.component.html',
+  styleUrl: './survey.component.scss'
 })
 export class ServeyComponent {
 

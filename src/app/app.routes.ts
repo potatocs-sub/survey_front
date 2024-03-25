@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { AddSurveyComponent } from './pages/add-survey/add-survey.component';
 import { EditServeyComponent } from './pages/edit-servey/edit-servey.component';
-import { ServeyComponent } from './pages/servey/servey.component';
+import { ServeyComponent } from './pages/survey/survey.component';
 import { NotFoundComponent } from './components/public/not-found/not-found.component';
 import { HomeComponent } from './pages/home/home.component';
 
