@@ -19,13 +19,33 @@ export class HomeComponent {
   constructor(private surveyService: SurveyService, private router: Router) { }
 
   ngOnInit() {
-    this.surveyService.getSurveyList().subscribe((res: any) => {
-      this.surveys = res
-    })
+    this.getSurveyList();
   }
 
   // 설문조사로 이동
   goToSurvey(_id: string) {
     this.router.navigate([`survey/${_id}`])
+  }
+
+  goToEdit(_id: string) {
+    this.router.navigate([`edit_survey/${_id}`])
+  }
+
+
+  getSurveyList() {
+    this.surveyService.getSurveyList().subscribe((res: any) => {
+      this.surveys = res
+    })
+  }
+
+  // 설문지 삭제
+  Delete(_id: string) {
+    this.surveyService.deleteSurvey(_id).subscribe((res: any) => {
+      console.log(res);
+      if (res.status) {
+        window.alert('설문이 삭제되었습니다.')
+        this.getSurveyList();
+      }
+    })
   }
 }

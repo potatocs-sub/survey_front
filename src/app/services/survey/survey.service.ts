@@ -34,4 +34,14 @@ export class SurveyService {
   getSurveyResult(_id: string) {
     return this.http.get(this.baseUrl + `/survey/result/${_id}`)
   }
+
+
+  // 설문지 삭제
+  deleteSurvey(_id: string) {
+    return this.http.delete(this.baseUrl + `/survey/${_id}`);
+  }
+
+  editSurvey(_id: string, survey: any) {
+    return this.http.patch(this.baseUrl + `/survey/${_id}`, survey);
+  }
 }

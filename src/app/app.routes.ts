@@ -23,7 +23,7 @@ export const routes: Routes = [
         component: AddSurveyComponent
     },
     {
-        path: 'edit_survey',
+        path: 'edit_survey/:_id',
         title: 'edit survey',
         component: EditServeyComponent
     },
