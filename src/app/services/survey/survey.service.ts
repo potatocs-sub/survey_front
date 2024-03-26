@@ -29,4 +29,9 @@ export class SurveyService {
   survey(_id: string, survey: any) {
     return this.http.post(this.baseUrl + `/survey/${_id}`, survey);
   }
+
+  // 설문 결과 조회
+  getSurveyResult(_id: string) {
+    return this.http.get(this.baseUrl + `/survey/result/${_id}`)
+  }
 }

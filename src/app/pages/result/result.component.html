@@ -1,1 +1,14 @@
-<p>result works!</p>
+<div class="result_container">
+    <app-card>
+        <h3>응답: {{result.length}} 개</h3>
+    </app-card>
+
+    @for(card of survey.cards; track card) {
+    <app-card>
+        <h4>{{card.item_title}}</h4>
+
+        <canvas baseChart [data]="setData(card.index)" [legend]="false" [options]="chartOptions"
+            [type]="'bar'"></canvas>
+    </app-card>
+    }
+</div>
