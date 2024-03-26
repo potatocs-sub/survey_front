@@ -59,6 +59,13 @@
             display: flex;
             justify-content: end;
             gap: 0.5rem;
+
+
+
+            .submit_button {
+                background-color: $main_logo_color;
+                color: white;
+            }
         }
     }
 }
