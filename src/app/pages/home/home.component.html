@@ -1,4 +1,9 @@
 <div class="home_container">
+    <section class="add_button_section">
+        <button mat-flat-button routerLink="add_survey">add</button>
+    </section>
+
+
     @for(survey of surveys; track survey){
     <app-card>
         <section class="card">

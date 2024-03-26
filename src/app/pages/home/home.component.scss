@@ -6,6 +6,17 @@
     gap: 1rem;
 
 
+    .add_button_section {
+        display: flex;
+        justify-content: end;
+
+        button {
+            background-color: $main_logo_color;
+            color: white;
+        }
+    }
+
+
 
     .card {
         display: flex;
