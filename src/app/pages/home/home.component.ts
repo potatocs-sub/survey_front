@@ -3,11 +3,12 @@ import { CardComponent } from '../../components/public/card/card.component';
 import { SurveyService } from '../../services/survey/survey.service';
 import { ThisReceiver } from '@angular/compiler';
 import { Router, RouterModule } from '@angular/router';
+import { MaterialsModule } from '../../materials/materials.module';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CardComponent, RouterModule],
+  imports: [CardComponent, RouterModule, MaterialsModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

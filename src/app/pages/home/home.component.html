@@ -1,11 +1,22 @@
 <div class="home_container">
     @for(survey of surveys; track survey){
-    <app-card [hover]="true" (click)="goToSurvey(survey._id)">
-        <div class="card">
+    <app-card>
+        <section class="card">
             <h3 class="title">{{survey.title}}</h3>
             <p class="description">{{survey.description}}</p>
-        </div>
+        </section>
+        <section class="button_section">
+            <div class="action_buttons">
+                <button mat-button class="survey_button" (click)="goToSurvey(survey._id)">survey</button>
 
+                <button mat-button class="edit_button">edit</button>
+                <button mat-button color="warn">delete</button>
+            </div>
+
+
+
+            <button mat-button routerLink="result/{{survey._id}}">result</button>
+        </section>
     </app-card>
     }
 </div>

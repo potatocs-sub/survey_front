@@ -10,18 +10,23 @@ export class SurveyService {
 
   constructor(private http: HttpClient) { }
 
-  // add survey
+  // 설문지 등록
   addSurvey(survey: any) {
     return this.http.post(this.baseUrl + `/survey/add`, survey);
   }
 
-  // get survey
+  // 설문지 목록 요청
   getSurveyList() {
     return this.http.get(this.baseUrl + '/survey');
   }
 
-
+  // 특정 설문지 요청
   getSurvey(_id: string) {
     return this.http.get(this.baseUrl + `/survey/${_id}`);
+  }
+
+  // 설문
+  survey(_id: string, survey: any) {
+    return this.http.post(this.baseUrl + `/survey/${_id}`, survey);
   }
 }

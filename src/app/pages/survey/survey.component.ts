@@ -26,7 +26,6 @@ export class SurveyComponent {
       this.surveyService.getSurvey(res._id).subscribe((res: any) => {
         this.survey = res;
         this.survey.cards.map((card: any) => {
-          console.log(card)
           this.result[`${card.index}`] = [];
         })
       })
@@ -40,10 +39,26 @@ export class SurveyComponent {
       this.result[`${card_index}`] = this.result[`${card_index}`].filter((card: any) => card != option_index)
     }
 
-    console.log(this.result)
+    // console.log(this.result)
   }
 
 
+
+  submit() {
+    for (let card of this.survey.cards) {
+      if (card.required && this.result[card.index].length == 0) {
+        window.alert('필수 항목 미입력: ' + card.item_title)
+        return;
+      }
+    }
+
+    this.surveyService.survey(this.survey_id, this.result).subscribe((res: any) => {
+      if (res.status) {
+        window.alert("응답이 기록되었습니다.")
+        this.router.navigate(['/'])
+      }
+    })
+  }
 
   back() {
     this.router.navigate(['/'])

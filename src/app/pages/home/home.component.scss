@@ -1,3 +1,5 @@
+@import '../../setting.scss';
+
 .home_container {
     display: flex;
     flex-direction: column;
@@ -9,6 +11,7 @@
         display: flex;
         flex-direction: column;
         gap: 1rem;
+        margin-bottom: 1rem;
 
         .title {
             font-size: 24pt;
@@ -18,6 +21,28 @@
         .description {
             margin: 0;
             color: gray;
+        }
+    }
+
+
+    .button_section {
+        display: flex;
+
+        justify-content: space-between;
+
+        .action_buttons {
+            display: flex;
+            gap: 0.5rem;
+
+
+            .survey_button {
+                color: $main_color;
+            }
+
+            .edit_button {
+
+                color: $main_logo_color;
+            }
         }
     }
 

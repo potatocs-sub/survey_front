@@ -10,11 +10,16 @@
     </section>
 
 
-    <form class="input_container">
+    <form class="input_container" (ngSubmit)="submit()">
         <section class="input_section">
             @for(card of survey.cards; track card.index) {
             <app-card>
-                <h4 class="card_title">{{card.item_title}}</h4>
+                <h4 class="card_title">
+                    @if(card.required) {
+                    <div class="red_dot">*</div>
+                    }
+                    {{card.item_title}}
+                </h4>
 
                 @for(option of card.item_options; track option) {
                 <li>
@@ -28,7 +33,7 @@
             }
         </section>
         <section class="button_section">
-            <button mat-flat-button>submit</button>
+            <button type="submit" mat-flat-button>submit</button>
             <button (click)="back(); $event.preventDefault()" mat-flat-button color="warn">cancel</button>
         </section>
     </form>

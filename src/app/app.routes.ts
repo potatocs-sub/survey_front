@@ -28,7 +28,7 @@ export const routes: Routes = [
         component: EditServeyComponent
     },
     {
-        path: 'result',
+        path: 'result/:_id',
         title: 'survey result',
         component: ResultComponent
     },
