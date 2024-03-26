@@ -25,7 +25,9 @@ export class ResultComponent {
 
   chartOptions: any = {
     indexAxis: 'y',
-
+    backgroundColor: 'rgba(0, 21, 79, 255)',
+    responsive: true,
+    maintainAspectRatio: false
   }
 
   ngOnInit() {
@@ -42,19 +44,14 @@ export class ResultComponent {
             data.data.push(0);
           })
           this.organized_result[`${card.index}`] = data;
-
         })
         this.surveyService.getSurveyResult(res._id).subscribe((res: any) => {
           this.result = res;
-
           this.result.map((r: any) => {
             const entries = Object.entries(r.result);
-
             entries.map((r2: any) => {
               r2[1].map((r3: any) => {
-
                 const result = this.organized_result[`${r2[0]}`]
-
                 result.data[result.index.indexOf(r3)]++;
               })
             })

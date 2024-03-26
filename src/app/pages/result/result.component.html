@@ -7,8 +7,11 @@
     <app-card>
         <h4>{{card.item_title}}</h4>
 
-        <canvas baseChart [data]="setData(card.index)" [legend]="false" [options]="chartOptions"
-            [type]="'bar'"></canvas>
+        <div style="height: 300px">
+            <canvas baseChart [data]="setData(card.index)" [legend]="false" [options]="chartOptions"
+                [type]="'bar'"></canvas>
+        </div>
+
     </app-card>
     }
 </div>
