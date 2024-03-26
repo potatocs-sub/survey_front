@@ -35,7 +35,7 @@ export class ResultComponent {
       this.survey_id = res._id;
       this.surveyService.getSurvey(res._id).subscribe((res: any) => {
         this.survey = res;
-        console.log(this.survey)
+
         this.survey.cards.map((card: any) => {
           const data: any = { labels: [], index: [], data: [] };
           card.item_options.map((option: any) => {

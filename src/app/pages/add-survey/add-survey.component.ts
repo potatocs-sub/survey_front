@@ -4,6 +4,7 @@ import { MaterialsModule } from '../../materials/materials.module';
 import { CommonModule } from '@angular/common';
 import { CdkDrag, CdkDragDrop, CdkDropList, moveItemInArray } from '@angular/cdk/drag-drop';
 import { SurveyService } from '../../services/survey/survey.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-survey',
@@ -27,7 +28,7 @@ export class AddSurveyComponent {
 
 
 
-  constructor(private surveyService: SurveyService) {
+  constructor(private surveyService: SurveyService, private router: Router) {
 
   }
 
@@ -71,9 +72,11 @@ export class AddSurveyComponent {
 
   // 제출
   submit() {
-    console.log(this.title, this.description, this.cards)
-    this.surveyService.addSurvey({ title: this.title, description: this.description, cards: this.cards }).subscribe((res) => {
-
+    this.surveyService.addSurvey({ title: this.title, description: this.description, cards: this.cards }).subscribe((res: any) => {
+      if (res.status) {
+        window.alert('설문지가 등록되었습니다.');
+        this.router.navigate(['/']);
+      }
     })
   }
 }
